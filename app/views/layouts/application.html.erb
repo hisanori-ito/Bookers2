@@ -19,9 +19,9 @@
         <!--<li>
           <!%= link_to "Users", ユーザー一覧画面へ %>
         </li>-->
-        <!--<li>
-          <!%= link_to "Books", 本の一覧画面へ %>
-        </li>-->
+        <li>
+          <%= link_to "Books", books_path %>
+        </li>
         <li>
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </li>
@@ -29,9 +29,9 @@
         <!--<li>
           <!%= link_to "Home", ユーザー詳細画面へ %>
         </li>-->
-        <!--<li>
-          <!%= link_to "About", home/aboutへ %>
-        </li>-->
+        <li>
+          <%= link_to "About", home_about_path %>
+        </li>
         <li>
           <%= link_to "Sign Up", new_user_registration_path %>
         </li>
