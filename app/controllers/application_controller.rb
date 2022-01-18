@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  #def after_sign_in_path_for(resource)
-    # ユーザーの詳細画面マイページへ設定する。pathの記入
-  #end
+  def after_sign_in_path_for(resource)
+    user_path(current_user.id)
+  end
 
   #def after_sign_out_path_for(resource)
-    # 元々ルートだから要らない。あとで消す
+    # 元々ルートだから要らな~い。あとで消す
   #end
 
   protected
