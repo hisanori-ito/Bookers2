@@ -1,5 +1,14 @@
 <h1>Books</h1>
 
+<% if @book.errors.any? %>
+ <%= @book.errors.count %>件のエラー
+ <ul>
+  <% @book.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+  <% end %>
+ </ul>
+<% end %>
+
 <% @books.each do |book| %>
  <p>id:<%= book.id %></p>
  <p>ユーザー名:<%= book.user.name %></p>

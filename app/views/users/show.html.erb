@@ -1,9 +1,9 @@
 <h1>Books</h1>
 
-<div>
-  <%= image_tag @user.get_profile_image("50x50") %>
-  <p>ユーザーID:<%= @user.id %></p>
-</div>
+<!--<div>
+  <!%= image_tag @user.get_profile_image("50x50") %>
+  <p>ユーザーID:<!%= @user.id %></p>
+</div>-->
 
 <% @books.each do |book| %>
 <div>
@@ -12,4 +12,8 @@
 </div>
 <% end %>
 
-<p><%= link_to "User_edit", edit_user_path(@user) %></p>
+<!--<p>
+  <!%= link_to "User_edit", edit_user_path(@user) %>
+</p>-->
+
+<%= render 'common', locals: {user: @user, book: @books} %>
