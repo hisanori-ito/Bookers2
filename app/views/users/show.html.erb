@@ -1,19 +1,35 @@
-<h1>Books</h1>
-
-<!--<div>
-  <!%= image_tag @user.get_profile_image("50x50") %>
-  <p>ユーザーID:<!%= @user.id %></p>
-</div>-->
-
-<% @books.each do |book| %>
-<div>
-  <p>Title:<%= book.title %></p>
-  <p>Opinion:<%= book.body %></p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'common', {user: @user_common, book: @book_common} %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <% @books.each do |book| %>
+        <tbody>
+          <tr>
+            <td>
+              <!--ユーザーイメージ-->
+            </td>
+            <td>
+              <%=link_to book.title, book_path(book.id) %>
+            </td>
+            <td>
+              <%= book.body %>
+            </td>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>
-<% end %>
-
-<!--<p>
-  <!%= link_to "User_edit", edit_user_path(@user) %>
-</p>-->
-
-<%= render 'common', locals: {user: @user, book: @books} %>
