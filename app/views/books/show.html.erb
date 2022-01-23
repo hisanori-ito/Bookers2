@@ -2,7 +2,7 @@
  <p><%= flash[:notice] %></p>
 <% end %>
 
-<div class="container">
+<div class="container px-5 px-sm-0">
  <div class="row">
   <div class="col-md-3">
    <%= render 'users/common', {user: @user_common, book: @book_common} %>
@@ -13,7 +13,7 @@
     <tbody>
      <tr>
       <td>
-       <!--ユーザー画像--><br>
+       <%= link_to image_tag(@book.user.get_profile_image("50x50")), user_path(@book.user.id) %><br>
        <%= link_to @book.user.name, user_path(@book.user.id) %>
       </td>
       <td>
