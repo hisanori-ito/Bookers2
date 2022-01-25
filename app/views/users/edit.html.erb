@@ -1,7 +1,7 @@
-<% if @user_error.errors.any? %>
- <%= @user_error.errors.count %>件のエラー
+<% if @user.errors.any? %>
+ <%= @user.errors.count %>件のエラー
  <ul>
-  <% @user_error.errors.full_messages.each do |message| %>
+  <% @user.errors.full_messages.each do |message| %>
    <li><%= message %></li>
   <% end %>
  </ul>
